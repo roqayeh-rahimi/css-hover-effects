@@ -1,0 +1,124 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    /* line-height: 0.8rem; */
+    /* font-size: 1.5rem; */
+    background-color: rgb(220, 220, 220);
+    margin: 10px 0;
+}
+.fancy-link{
+    text-decoration: none;
+    padding-bottom: 1.5px;
+    position: relative;
+}
+.fancy-link::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background:currentColor ;
+
+    transform: scaleX(0);
+    transform-origin:right ;
+    transition: transform .5s ease-in;
+}
+.fancy-link:hover::after{
+    transform: scaleX(1);
+    transform-origin:left ;
+}
+
+#container .content{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #666;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    max-width: 75%;
+    /* height: 100px; */
+    margin: 15px auto;
+
+}
+#container .content h1,
+#container .content a{
+    color: rgba(255, 111, 0, 0.841);
+    margin-bottom: 30px;
+}
+#container .content h1{
+    font-size: 37px;
+    font-weight: 900;
+    line-height: 35px;
+    font-style: italic;
+}
+#content-1{
+    height: 250px;
+    font-size: 15px;
+    font-weight: 550;
+    flex-direction: column;
+}
+#content-2{
+    height: 150px !important;
+
+}
+#content-2 .btn{
+    background-color:rgba(255, 111, 0, 0.841) ;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 10px;
+    color: white;
+    cursor: pointer;
+    position: relative;
+}
+#content-3 .card{
+    background: url(https://unsplash.it/600) cover;
+
+}
+.btn::after{
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+
+    transition: transform 200ms ease-in;
+}
+.button-one::after{
+    transform: scaleX(0) ;
+    transform-origin: right;
+}
+.button-one:hover:after{
+    transform: scaleX(1) ;
+    transform-origin: left;
+}
+
+.button-two::after{
+    transform: scaleY(0) ;
+    transform-origin: top;
+}
+.button-two:hover:after{
+    transform: scaleY(1) ;
+    transform-origin: bottom;
+}
+
+.button-three::after{
+    transform: scale(0) ;
+    transform-origin: right bottom;
+}
+.button-three:hover:after{
+    transform: scale(1) ;
+    transform-origin:  top left;
+}
